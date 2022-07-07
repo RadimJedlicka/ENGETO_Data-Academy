@@ -75,13 +75,13 @@ SELECT
 	cpay.payroll_year AS rok,
 	cpib.name AS odvetvi,
 	cpc.code AS kod_potraviny,
-    cpc.name AS jmeno_potraviny, 
-    cp.value AS cena_potraviny,
-    round(avg(cp.value), 2) AS prumerna_cena,
-    cpc.price_value AS mnozstvi,
-    cpc.price_unit AS jednotka,
-    cpay.value AS prumerna_mzda,
-    VIEW_gdp.HDP
+	cpc.name AS jmeno_potraviny, 
+	cp.value AS cena_potraviny,
+	round(avg(cp.value), 2) AS prumerna_cena,
+	cpc.price_value AS mnozstvi,
+	cpc.price_unit AS jednotka,
+	cpay.value AS prumerna_mzda,
+	VIEW_gdp.HDP
 FROM czechia_price AS cp
 JOIN czechia_payroll AS cpay
     ON YEAR(cp.date_from) = cpay.payroll_year AND
