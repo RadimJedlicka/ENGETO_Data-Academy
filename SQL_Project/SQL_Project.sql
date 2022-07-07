@@ -106,7 +106,7 @@ SELECT * FROM t_radim_jedlicka_project_sql_primary
  * **************************************************************************
  */ 
 
-CREATE OR REPLACE VIEW v_task1 AS
+CREATE OR REPLACE VIEW v_task1_vyvoj_mzdy AS
 SELECT 
 	rok,
 	odvetvi,
@@ -122,7 +122,7 @@ FROM t_radim_jedlicka_project_sql_primary
 GROUP BY odvetvi, rok
 ;
 
-SELECT * FROM v_task1
+SELECT * FROM v_task1_vyvoj_mzdy
 WHERE rozdil IS NOT NULL 
 ;
 
