@@ -161,7 +161,7 @@ SELECT
  * **************************************************************************************************
  */
 
-CREATE OR REPLACE VIEW v_task3 AS
+CREATE OR REPLACE VIEW v_task3_zdrazovani AS
 SELECT
 	DISTINCT rok,
 	jmeno_potraviny,
@@ -175,7 +175,7 @@ SELECT *,
 		round( prumerna_cena / (lag(prumerna_cena) OVER (PARTITION BY jmeno_potraviny ORDER BY rok) )  * 100 - 100, 2), ' %'
 		) 
 		AS 'cenovy_rozdil'
-FROM v_task3
+FROM v_task3_zdrazovani
 ORDER BY jmeno_potraviny, rok
 ;
 
