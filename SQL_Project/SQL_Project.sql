@@ -140,11 +140,10 @@ WHERE rozdil IS NOT NULL
 
 SELECT
 	rok,
-	odvetvi,
 	jmeno_potraviny,
-	prumerna_cena,
-	prumerna_mzda,
- 	concat(round(prumerna_mzda / prumerna_cena), ' ', jednotka) AS 'pocet_litru/kilogramu_za_prumerny_plat'
+	avg(prumerna_cena) AS prumerna_cena,
+	round(avg(prumerna_mzda)) AS prumerna_mzda,
+ 	concat(round(avg(prumerna_mzda) / prumerna_cena), ' ', jednotka) AS 'pocet_litru/kilogramu_za_prumerny_plat'
  FROM t_radim_jedlicka_project_sql_primary
  WHERE (jmeno_potraviny = 'Mléko polotučné pasterované' OR jmeno_potraviny = 'Chléb konzumní kmínový')
    AND (rok = '2006' OR rok = '2018')
