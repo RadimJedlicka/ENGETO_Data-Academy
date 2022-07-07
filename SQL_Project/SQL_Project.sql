@@ -262,7 +262,6 @@ SELECT
 	v_task5_HDP_procenta.odvetvi,
 	HDP_rozdil_procenta,
 	lag(HDP_rozdil_procenta) OVER (PARTITION BY odvetvi ORDER BY rok) AS 'predchozi_rok_HDP',
--- 	cenovy_rozdil_procenta,
 	rozdil_mzdy_v_procentech,
 	CASE 
 		WHEN rozdil_mzdy_v_procentech > HDP_rozdil_procenta
