@@ -147,8 +147,7 @@ SELECT
  	concat(round(prumerna_mzda / prumerna_cena), ' ', jednotka) AS 'pocet_litru/kilogramu_za_prumerny_plat'
  FROM t_radim_jedlicka_project_sql_primary
  WHERE (jmeno_potraviny = 'Mléko polotučné pasterované' OR jmeno_potraviny = 'Chléb konzumní kmínový')
-   AND (rok = '2006'
-    OR rok = '2018')
+   AND (rok = '2006' OR rok = '2018')
  ORDER BY jmeno_potraviny, odvetvi
  
 /*
